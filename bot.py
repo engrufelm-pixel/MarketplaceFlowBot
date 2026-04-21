@@ -7,8 +7,12 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemo
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 
+import os
+
 load_dotenv()
-from config import BOT_TOKEN, ADMIN_CHAT_ID
+
+BOT_TOKEN = os.getenv('BOT_TOKEN')
+ADMIN_CHAT_ID = int(os.getenv('ADMIN_CHAT_ID', '123456789'))
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
